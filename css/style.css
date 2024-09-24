@@ -1,0 +1,1712 @@
+/*GLOBAL*/
+@font-face {
+  font-family: "Open Sans";
+  src: url("..//fonts/open-sans/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("..//fonts/open-sans/OpenSans-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/open-sans/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-white: #eeeeee;
+  --color-black: #000000;
+  --color-green: #016f52;
+  --color-blue: #1a77a3;
+  --color-gray: #e5e5e5;
+  --color-turquoise: #81d2bc;
+  --color-lightblue: #d7e8ef;
+  --color-darkblue: #1c77a4;
+  --site-text-color: #140a32;
+}
+
+/*сокращенные css-правила для описания классов стилей*/
+.help-title,
+.consult-title,
+.how-title,
+.why-title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  /* line-height: 44px; */
+  font-weight: 600;
+  color: var(--site-text-color);
+}
+
+.consult-descr__title,
+.consult-card__title,
+.consult-card__title2,
+.consult-card__title3,
+.consult-card__title4 {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.hotline__descr,
+.hotline-advantages__descr,
+.help__descr,
+.how-card__descr,
+.consult-card__descr2,
+.consult-card__descr-phone,
+.why-descr,
+.numbers-box__descr,
+.input-btn__descr,
+.ask-input__btn-descr,
+.top-content__text-descr,
+.lawyers-top__content-descr,
+.lawyers-btn__text-descr,
+.lawyers-btn__text--descr,
+.lawyers-bottom__descr {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 168%;
+  text-align: left;
+  color: var(--site-text-color);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-style: normal;
+  margin: 0 auto;
+  background-color: var(--color-white);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  list-style-type: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-reset {
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+/*COMMON*/
+.container {
+  max-width: 1440px;
+  padding: 0 150px;
+  margin: 0 auto;
+}
+
+/*HEADER*/
+.header {
+  background-color: var(--color-white);
+}
+
+.header__container {
+  flex-wrap: wrap;
+}
+
+.header-top {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.header-logo {
+  margin-right: 30px;
+  margin-top: 7px;
+}
+
+/*ФОРМА*/
+.form-block {
+  width: 39%;
+}
+
+.form-content {
+  position: relative;
+  width: 427px;
+}
+
+.form-search__input {
+  position: absolute;
+  width: 100%;
+  height: 52px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #2f2b430a;
+  font-family: Open Sans;
+  font-size: 1rem;
+  color: var(--color-black);
+}
+
+.header-form__search-btn {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+}
+
+.header-right {
+  position: relative;
+  justify-content: end;
+  width: 40%;
+}
+
+/*КНОПКА ЗАДАТЬ ВОПРОС*/
+.header-ask__btn {
+  display: flex;
+  position: absolute;
+  right: 50%;
+  width: 192px;
+  padding: 14px 15px;
+  border-radius: 10px;
+  background-color: var(--color-green);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 21.79px;
+  text-align: left;
+
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.header-ask__btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.header-ask__btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.header-ask__btn-icon {
+  margin-right: 10px;
+}
+
+.header-ask__btn-pan {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+/*БЕСПЛАТНЫЙ ЗВОНОК*/
+.header-call {
+  flex-direction: column;
+  position: absolute;
+  right: -5%;
+}
+
+.header-call__title {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #140a32;
+  margin-bottom: 6px;
+}
+
+.header-call__text {
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  color: #2f2b4380;
+}
+
+/*НИЖНИЙ БЛОК*/
+.header-bottom {
+  position: relative;
+}
+
+.bottom__container {
+  justify-content: space-between;
+}
+
+.header-bottom__middle {
+  width: 45%;
+}
+
+.header-bottom__nav {
+  width: 97%;
+}
+
+/*КНОПКИ*/
+.bottom-block__btns {
+  width: 100%;
+}
+
+.header-bottom__btn-call,
+.header-bottom__btn-telegram {
+  position: relative;
+  padding: 10px 20px;
+  border: 1px solid #2f2b4326;
+  border-radius: 10px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: end;
+  margin-top: 4px;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.header-bottom__btn-call svg {
+  position: absolute;
+  left: 10%;
+}
+
+.header-bottom__btn-telegram svg {
+  position: absolute;
+  left: 11%;
+  top: 20%;
+}
+
+.header-bottom__btn-call:hover,
+.header-bottom__btn-telegram:hover {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.header-bottom__btn-call:hover .header-bottom__btn-call-icon path {
+  background-color: var(--color-green);
+  fill: var(--color-white);
+}
+
+.header-bottom__btn-call:hover svg {
+  color: var(--color-white);
+}
+
+.header-bottom__btn-call {
+  width: 202px;
+}
+
+.header-bottom__btn-telegram {
+  width: 144px;
+}
+
+.header-bottom__btn-call {
+  margin-right: 15px;
+}
+
+/*МЕНЮ НАВИГАЦИИ*/
+.header-bottom__nav-list {
+  padding: 13px 0;
+}
+
+.header-bottom__nav-item:not(:last-child) {
+  margin-right: 28px;
+}
+
+.header-bottom__nav-menu-link {
+  display: inline-block;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.header-bottom__nav-menu-link:hover {
+  color: var(--color-green);
+}
+
+.header-bottom__nav-menu-link:active {
+  color: var(--color-turquoise);
+}
+
+.header-bottom__right {
+  position: relative;
+}
+
+.user-reg {
+  position: absolute;
+  left: -12%;
+  bottom: 30%;
+}
+
+.bottom-user__reg-text {
+  width: 151px;
+}
+
+.user-reg__text {
+  position: absolute;
+  right: -7%;
+  top: 9%;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 40px;
+  color: #140a32;
+}
+
+/*ГОРЯЧАЯ ЛИНИЯ*/
+.hotline-container {
+  position: relative;
+  justify-content: space-between;
+}
+
+.hotline-left__block {
+  max-width: 678px;
+  padding-top: 40px;
+}
+
+/* .hotline-right__block   */
+.hotline-text {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  color: #2f2b4380;
+  margin-bottom: 50px;
+}
+
+.hotline-title {
+  font-family: Open Sans;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 52px;
+  color: var(--site-text-color);
+  margin-bottom: 12px;
+}
+
+.hotline__descr {
+  margin-bottom: 28px;
+}
+
+/*БЛОК С КНОПКОЙ*/
+.hotline-btn {
+  width: 253px;
+  padding: 16px 36px 18px 36px;
+  border-radius: 10px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 40px;
+  margin-right: 30px;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.hotline-btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.hotline-btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.hotline-btn__content {
+  flex-direction: column;
+}
+
+.hotline-btn__text {
+  font-family: Open Sans;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  color: #33836e;
+  border-bottom: 2px solid #33836e;
+  margin-bottom: 6px;
+}
+
+.hotline-span__text {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #2f2b4380;
+}
+
+/*НИЖНИЙ БЛОК С ИКОНКАМИ*/
+.hotline-advantages {
+  display: flex;
+}
+
+.hotline-advantages__clock,
+.hotline-advantages__money,
+.hotline-advantages__lock,
+.hotline-advantages__flash {
+  margin-right: 10px;
+}
+
+.hotline-advantages__descr:not(:last-child) {
+  margin-right: 30px;
+}
+
+/*ПРАВЫЙ БЛОК*/
+.hotline-right__block {
+  position: absolute;
+  right: 6%;
+  left: 64%;
+}
+
+.hotline-right__img {
+  padding-top: 60px;
+  padding-bottom: 96px;
+}
+
+/*ЮРИДИЧЕСКАЯ ПОМОЩЬ*/
+.help {
+  padding-top: 102px;
+}
+
+.help-title {
+  margin-bottom: 20px;
+}
+
+/*БЕСПЛАТНАЯ ЮРИДИЧЕСКАЯ КОНСУЛЬТАЦИЯ*/
+.consult {
+  padding: 80px 0;
+}
+
+.consult-title {
+  margin-bottom: 20px;
+}
+
+.consult__descr {
+  margin-bottom: 30px;
+}
+
+.help-wrapper {
+  width: 1140px;
+}
+
+/*КАРТОЧКА БЛОКА ПОМОЩИ ГОРЯЧЕЙ ЛИНИИ*/
+.consult-card__block {
+  justify-content: space-between;
+}
+
+.consult__card {
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  min-width: 270px;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid #2f2b4326;
+}
+
+.consult__card:not(:last-child) {
+  margin-right: 20px;
+}
+
+.consult__card-svg {
+  margin-bottom: 15px;
+}
+
+/*СТИЛИЗАЦИЯ ТЕКСТОВОГО БЛОКА КАРТОЧКИ*/
+.consult-card__title {
+  margin-bottom: 15px;
+}
+
+.consult-descr__title {
+  margin-bottom: 30px;
+}
+
+.consult-card__descr {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--site-text-color);
+  margin-bottom: 15px;
+}
+
+.consult-card__title2,
+.consult-card__title3,
+.consult-card__title4 {
+  margin-bottom: 25px;
+}
+
+.consult-card__descr {
+  margin-bottom: 15px;
+}
+
+.consult-card__descr2 {
+  color: #33836e;
+}
+
+/*ЗВОНИТЕ*/
+.call {
+  position: relative;
+  background-image: url("../img/woman-working-call-center\ 1.png");
+  background-position: 43px -6px;
+  background-repeat: no-repeat;
+  background-color: #33836e;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/*КОНТЕЙНЕР И ФОНОВАЯ КАРТИНКА*/
+.call-container {
+  padding: 50px 110px 100px 108px;
+  background: url("../img/Ellipse\ 14.png") left 100% no-repeat;
+  background-position: 0 26px;
+}
+
+.inner {
+  position: relative;
+  justify-content: space-between;
+}
+
+.middle-box__content {
+  position: absolute;
+  right: 41%;
+}
+
+/*ТЕКСТОВЫЙ БЛОК*/
+.middle-box__title {
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 14px;
+}
+
+.middle-box__descr {
+  font-family: Open Sans;
+  font-size: 2.625rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: var(--color-white);
+}
+
+/*ПРАВЫЙ БЛОК С КРУГЛЫМИ ИКОНКАМИ*/
+.right-box {
+  flex-direction: column;
+  position: relative;
+  top: -17px;
+  width: 260px;
+}
+
+.right-box__descr {
+  font-family: Open Sans;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 24.51px;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+/*БЛОК С ФОТОГРАФИЯМИ*/
+.right-img__block {
+  position: relative;
+}
+
+.callcenter-img1,
+.callcenter-img2,
+.callcenter-img3,
+.callcenter-img4,
+.callcenter-img5,
+.callcenter-img6,
+.callcenter-img__frame {
+  position: absolute;
+}
+
+.callcenter-img1 {
+  right: 75%;
+}
+
+.callcenter-img2 {
+  right: 63%;
+}
+
+.callcenter-img3 {
+  right: 51%;
+}
+
+.callcenter-img4 {
+  right: 38%;
+}
+
+.callcenter-img5 {
+  right: 25%;
+}
+
+.callcenter-img6 {
+  right: 12%;
+}
+
+.callcenter-img__frame {
+  right: 0;
+}
+
+/*КАК МЫ СМОЖЕМ ПОМОЧЬ ВАМ?*/
+.how {
+  padding-top: 78px;
+}
+
+.how-title {
+  margin-bottom: 30px;
+}
+
+/*СПИСОК КАРТОЧЕК*/
+.how-card__list {
+  flex-wrap: wrap;
+  max-width: 102%;
+  width: 1140px;
+}
+
+.how-card {
+  margin-bottom: 20px;
+}
+
+.how-card:not(:nth-child(2n)) {
+  margin-right: 20px;
+}
+
+.how-card__item {
+  position: relative;
+  max-width: 560px;
+  min-height: 100%;
+  border: 1px solid rgba(47, 43, 67, 0.15);
+  border-radius: 20px;
+}
+
+.card-item__content {
+  padding: 25px 40px;
+}
+
+.how-card__item-icon {
+  position: relative;
+  margin-right: 20px;
+  bottom: -10px;
+  right: 8px;
+}
+
+.how-card__item-icon rect {
+  fill: rgba(83, 177, 113, 0.15);
+}
+
+.how-card__descr--mod1 {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 24px;
+}
+
+.how-card__descr2--mod {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 12px;
+}
+
+.how-card__descr3,
+.how-card__descr4 {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 10px;
+  color: var(--site-text-color);
+}
+
+.how-text {
+  width: 390px;
+}
+
+/*ПОЧЕМУ СТОИТ ВЫБРАТЬ НАС*/
+.why {
+  padding-top: 95px;
+}
+
+.wrapper {
+  flex-direction: column;
+}
+
+.why-title {
+  margin-bottom: 20px;
+}
+
+.why-left__block {
+  width: 560px;
+}
+
+.left-content {
+  position: relative;
+}
+
+.why-descr {
+  margin-bottom: 30px;
+}
+
+/*НИЖНИЙ БЛОК С ЦИФРАМИ*/
+.why-bottom__content {
+  width: 469px;
+}
+
+.why-bottom__card:not(:last-child) {
+  margin-right: 40px;
+}
+
+.numbers-box__title {
+  font-family: Open Sans;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38px;
+  color: #33836e;
+  margin-bottom: 10px;
+}
+
+.numbers-box__descr {
+  margin-bottom: 85px;
+}
+
+.left-content {
+  justify-content: space-between;
+}
+
+.span-text {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 175%;
+  color: var(--site-text-color);
+}
+
+.help__descr {
+  margin-bottom: 10px;
+}
+
+/*БЛОК С ФОТОГРАФИЕЙ ЮРИСТОВ*/
+.why-right__box picture {
+  position: absolute;
+  width: 560px;
+  right: -1.4%;
+  bottom: -4px;
+}
+
+/*БЛОК С ТЕКСТОВЫМ ПОЛЕМ*/
+.why-bottom__block {
+  position: relative;
+  width: 102%;
+  max-width: 1140px;
+  background-color: #33836e;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 50px 70px 50px 60px;
+}
+
+.bottom-content {
+  justify-content: space-between;
+}
+
+.left-content {
+  flex-direction: column;
+}
+
+.left-box__title {
+  font-family: Open Sans;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.left-box__descr {
+  font-family: Open Sans;
+  font-size: 2.4375rem;
+  font-weight: 700;
+  line-height: 147.2%;
+  color: var(--color-white);
+  margin-left: 2px;
+}
+
+/*ПРАВАЯ ЧАСТЬ С КНОПКАМИ*/
+.why-right__content {
+  flex-direction: column;
+}
+
+.why-right__content-title {
+  font-family: Open Sans;
+  position: relative;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24.51%;
+  color: var(--color-white);
+  margin-bottom: 16px;
+  top: -13px;
+  right: 10px;
+}
+
+.why-text__content-btn {
+  flex-direction: column;
+}
+
+.why-right__btn-box {
+  position: relative;
+  width: 471px;
+}
+
+.why-input__btn-title {
+  color: rgba(47, 43, 67, 0.4);
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.why-input__btn-descr--info {
+  line-height: 19px;
+  text-align: left;
+}
+
+.why-input__btn {
+  position: absolute;
+  left: -2.3%;
+  top: -2px;
+  padding: 7px 0px 5px 16px;
+  border-radius: 10px;
+  width: 243px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  font-family: Open Sans;
+  font-weight: 400;
+  margin-right: 15px;
+}
+
+.why-call__btn {
+  position: absolute;
+  right: 3%;
+  padding: 16px 34px 16px 34px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  outline: none;
+  width: 207px;
+  border-radius: 10px;
+  font-family: Open Sans;
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 1rem;
+  background-color: #33836e;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.why-call__btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.why-call__btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/*ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ*/
+.why-user__agree-descr {
+  font-family: Open Sans;
+  position: relative;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  top: 77px;
+  width: 501px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  left: -13px;
+}
+
+/*СПЕЦИАЛЬНОСТИ НАШИХ ЮРИСТОВ*/
+.specials {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.specials-title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 43.58px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.specials-list {
+  flex-wrap: wrap;
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.specials-card:not(:nth-child(2n)) {
+  margin-right: 20px;
+}
+
+.specials-card {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/*КАРТОЧКА*/
+.specials-card__item {
+  min-height: 287px;
+  width: 560px;
+  height: 100%;
+  border: 1px solid rgba(47, 43, 67, 0.15);
+  border-radius: 20px;
+}
+
+.specials-card__content {
+  padding: 20px 20px 0 20px;
+}
+
+.card__content--descr {
+  padding: 20px;
+}
+
+.specials-top__content {
+  margin-bottom: 16px;
+}
+
+.specials-card__item-icon {
+  position: absolute;
+  bottom: 0;
+  top: 22px;
+}
+
+.specials-card__title {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 22px;
+  border-bottom: 1px solid rgba(51, 131, 110, 1);
+  color: var(--site-text-color);
+  margin-left: 36px;
+}
+
+.specials-card__descr {
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgba(47, 43, 67, 0.7);
+}
+
+/*ЗАДАЙТЕ ВОПРОС ЮРИСТУ БЕСПЛАТНО*/
+.ask {
+  padding-left: 18px;
+  padding-bottom: 88px;
+}
+
+.ask-container {
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  padding: 51px 0 61px 53px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: rgba(47, 43, 67, 0.04);
+}
+
+.ask-left__box {
+  width: 295px;
+}
+
+.ask-question__title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 43.58px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: var(--site-text-color);
+}
+
+/*КНОПКИ*/
+.ask-middle__box {
+  position: relative;
+  width: 423px;
+}
+
+.ask-input__btn {
+  position: absolute;
+  left: -34.3%;
+  top: 5px;
+  padding: 7px 16px 8px 16px;
+  border-radius: 10px;
+  width: 201px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 1);
+  font-family: Open Sans;
+  font-weight: 400;
+  margin-right: 15px;
+}
+
+.ask-input__btn-text {
+  flex-direction: column;
+}
+
+.ask-input__btn-title {
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 24.51%;
+  color: rgba(47, 43, 67, 0.4);
+  margin: 7px 67px 15px 0;
+}
+
+.ask-input__btn-descr--info {
+  line-height: 18px;
+  text-align: left;
+  letter-spacing: 0.1px;
+}
+
+.ask-btn {
+  position: absolute;
+  right: 34%;
+  top: 10%;
+  padding: 16px 34px 16px 34px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  outline: none;
+  width: 207px;
+  border-radius: 10px;
+  font-family: Open Sans;
+  font-weight: 600;
+  line-height: 18px;
+  font-size: 1rem;
+  background-color: #33836e;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.ask-btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.ask-btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/*ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ*/
+.ask-user__agree {
+  position: absolute;
+  top: 66%;
+  right: 40%;
+  width: 293px;
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  color: rgba(13, 11, 11, 0.5);
+  line-height: 16px;
+  letter-spacing: 0.01px;
+}
+
+/*ПРАВЫЙ БЛОК*/
+.ask-right__box picture {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/*SEO*/
+.seo {
+  position: relative;
+  padding-bottom: 96px;
+}
+
+.seo-title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 43.58px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.seo-descr {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  margin-bottom: 30px;
+}
+
+.seo-btn {
+  position: absolute;
+  max-width: 100%;
+  width: 1140px;
+  padding: 16px 36px;
+  border-radius: 10px;
+  background-color: rgba(224, 236, 233, 1);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 21.79px;
+  text-align: center;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.seo-btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.seo-btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/*ОТЗЫВЫ НАШИХ КЛИЕНТОВ*/
+.reviews {
+  position: relative;
+  padding-top: 41px;
+}
+
+.reviews-title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 43.58px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/*КАРТОЧКА СЛАЙДА*/
+.slide-card {
+  max-width: 100%;
+  width: 305px;
+  height: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(47, 43, 67, 0.15);
+}
+
+.slide-card__text-box {
+  margin-left: 0;
+}
+
+.slide-card__text-box--descr {
+  margin-left: 10px;
+}
+
+.top-content__icon {
+  margin-right: 15px;
+}
+
+.slide-top__content-box {
+  flex-direction: column;
+}
+
+.top-content__text-block {
+  margin-left: 12px;
+}
+
+.top-content__text {
+  flex-direction: column;
+}
+
+.top-content__text-title {
+  font-family: Open Sans;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24.51px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.top-content__text-descr {
+  margin-bottom: 24px;
+}
+
+.top-content__paragraph {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 25.6px;
+  text-align: left;
+  letter-spacing: -0.5px;
+  color: var(--site-text-color);
+  margin-bottom: 102px;
+}
+
+.top-content__paragraph--2 {
+  margin-bottom: 24px;
+}
+
+.bottom-content__text-title {
+  color: rgba(47, 43, 67, 0.5);
+  font-family: Open Sans;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+}
+
+.bottom-content__text-descr {
+  color: rgb(51, 131, 110);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+  margin-left: 8px;
+}
+
+/*СТРЕЛОЧКИ*/
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  outline: none;
+  color: transparent;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 5.5%;
+  top: 60%;
+  background-image: url("../img/btn_prev.png");
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 4.2%;
+  top: 60%;
+  background-image: url("../img/btn_next.png");
+}
+
+/*ЮРИСТЫ ПОРТАЛА*/
+.lawyers {
+  padding-top: 71px;
+}
+
+.lawyers-title {
+  color: rgb(20, 10, 50);
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 50px;
+}
+
+.lawyers-inner {
+  position: relative;
+  justify-content: space-between;
+}
+
+.lawyers-cards__box {
+  flex-direction: column;
+}
+
+.lawyers-card:not(:last-child) {
+  margin-right: 20px;
+}
+
+.lawyers-card:not(:nth-child(4n)) {
+  margin-bottom: 15px;
+}
+
+.lawyers-card__item {
+  position: relative;
+  max-width: 100%;
+  width: 463px;
+  height: 100%;
+  padding: 20px 0 20px 20px;
+  border: 1px solid rgba(47, 43, 67, 0.15);
+  border-radius: 20px;
+}
+
+.lawyers-card__content {
+  justify-content: center;
+}
+
+.lawyers-card__bottom-content {
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.lawyers-card__bottom-content--2 {
+  margin-right: 50px;
+}
+
+.lawyers-card__bottom-content--3 {
+  margin-left: 3px;
+}
+
+.lawyers-top__content-title {
+  font-family: Open Sans;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 24.51px;
+  color: rgba(20, 10, 50, 1);
+  margin-bottom: 5px;
+}
+
+.lawyers-top__content-text {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.79px;
+  color: rgba(47, 43, 67, 0.5);
+}
+
+.lawyers-top__content-text--3 {
+  margin-top: 9px;
+}
+
+.lawyers-top__content-text--4 {
+  margin-top: 8px;
+}
+
+.lawyers-card__img {
+  position: absolute;
+  left: 4%;
+  top: 22%;
+  margin-right: 20px;
+}
+
+.lawyers-btn {
+  max-width: 98%;
+  padding: 16px 36px;
+  background-color: rgba(224, 236, 233, 1);
+  border-radius: 10px;
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 21.79px;
+  margin-left: -4px;
+  margin-top: 17px;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.lawyers-btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.lawyers-btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/*ПРАВЫЙ БЛОК*/
+.lawyers-right__box {
+  position: relative;
+  right: 0;
+  bottom: 6px;
+  flex-direction: column;
+  width: 657px;
+  border-radius: 20px;
+  background-color: rgba(51, 131, 110, 1);
+  padding: 40px 40px 54px 40px;
+}
+
+.lawyers-right__btn {
+  position: absolute;
+  right: 4.6%;
+  top: 5%;
+  max-width: 100%;
+  height: 33px;
+  padding: 5px 16px 6px 38px;
+  border-radius: 10px;
+  background-color: var(--color-white);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.79px;
+  text-align: center;
+  color: var(--site-text-color);
+  transition: background-color 0.6s ease-in-out;
+}
+
+.lawyers-right__btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-black);
+}
+
+.lawyers-right__btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.lawyers-right__btn svg {
+  position: absolute;
+  left: 14%;
+  top: 32%;
+}
+
+.lawyers-right__title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 43.58px;
+  color: var(--color-white);
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+.lawyers-right__descr {
+  font-family: Open Sans;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 24.51px;
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+
+.lawyers-middle__box {
+  position: relative;
+  width: 577px;
+}
+
+.lawyers-middle__box-descr {
+  max-width: 100%;
+  width: 577px;
+  height: 213px;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 12px 16px 8px 16px;
+  background-color: var(--color-white);
+  color: rgba(47, 43, 67, 0.5);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.79px;
+  margin-bottom: 20px;
+}
+
+.lawyers-middle__btn-box {
+  position: relative;
+  justify-content: start;
+  margin-bottom: 15px;
+}
+
+.lawyers-btn-tel,
+.lawyers-btn-name {
+  width: 205px;
+  margin-right: 15px;
+  padding: 3px 18px 9px 16px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+}
+
+.lawyers-btn__text-tel,
+.lawyers-btn__text-name {
+  flex-direction: column;
+}
+
+.lawyers-btn__text-tel {
+  margin-right: 32px;
+}
+
+.lawyers-btn__text-name {
+  margin-right: 68px;
+}
+
+.lawyers-btn__text-title {
+  color: rgba(47, 43, 67, 0.4);
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 3px;
+  margin-right: 40px;
+}
+
+.lawyers-btn__text--title {
+  color: rgba(47, 43, 67, 0.4);
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  margin-bottom: 3px;
+  margin-left: -5px;
+}
+
+.lawyers-black__btn {
+  padding: 17px 24px 19px 24px;
+  border-radius: 10px;
+  background-color: rgb(20, 10, 50);
+  color: rgb(255, 255, 255);
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 22px;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.lawyers-black__btn:hover {
+  background-color: var(--color-turquoise);
+  color: var(--color-white);
+}
+
+.lawyers-black__btn:active {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.lawyers-user__agree {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: Open Sans;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 16px;
+  margin-bottom: 30px;
+}
+
+.lawyers-bottom__text {
+  width: 350px;
+}
+
+.lawyers-left__bottom-text:not(:last-child) {
+  margin-right: 40px;
+}
+
+.lawyers-bottom__title {
+  color: rgb(255, 255, 255);
+  font-family: Open Sans;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 10px;
+}
+
+.lawyers-bottom__descr {
+  color: var(--color-white);
+}
+
+.lawyers-bottom__descr--mod {
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+/*ТЕМЫ СПРАВОЧНЫЪ МАТЕРИАЛОВ*/
+.footer {
+  padding-top: 77px;
+  padding-bottom: 80px;
+}
+
+.footer-title {
+  font-family: Open Sans;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 43.58px;
+  color: rgba(20, 10, 50, 1);
+  margin-bottom: 40px;
+}
+
+.footer-nav__list {
+  flex-wrap: wrap;
+  width: 1140px;
+  max-width: 102%;
+  margin-left: 10px;
+}
+
+.footer-nav__list-item {
+  display: block;
+  margin-bottom: 45px;
+  width: 285px;
+}
+
+.footer__list-item-content {
+  flex-direction: column;
+  width: 270px;
+}
+
+.footer__list-item-title {
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 32.68px;
+  color: rgba(20, 10, 50, 1);
+  margin-bottom: 12px;
+}
+
+.footer__list-item-descr {
+  font-family: Open Sans;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--site-text-color);
+  transition: all 0.6s ease-in-out;
+}
+
+.footer__list-item-descr:hover {
+  color: #33836e;
+}
+
+.footer__list-item-descr:active {
+  color: #016f52;
+}
